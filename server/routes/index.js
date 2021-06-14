@@ -1,12 +1,11 @@
 const express = require("express");
+const { getRoot, getItemsBySearch, getItem } = require("../services/items");
 const router = express.Router();
 
-const itemsService = require("../services/items");
+router.get("/", getRoot);
 
-router.get("/", itemsService.getRoot);
+router.get("/items", getItemsBySearch);
 
-router.get("/items", itemsService.getItems);
-
-router.get("/items/:id", itemsService.getItem);
+router.get("/items/:id", getItem);
 
 module.exports = router;
