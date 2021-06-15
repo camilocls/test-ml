@@ -42,11 +42,22 @@ const getItemsBySearch = async (req, res) => {
   .map((item) => item.name)
   .join(" / ") : "";
 
+  const products = dataMELI.results.map(item => {
+    return {
+      id: item.id,
+      title: item.title,
+      price: item.price,
+      thumbnail: item.thumbnail,
+      free_shipping: item.shipping.free_shipping,
+      location: item.seller_address.city.name
+    }
+  })
+
   const data = {
     author: AUTHOR,
     breadcrumb,
     categories: ["", ""],
-    items: dataMELI.results,
+    items: products,
   };
 
   return res.status(200).json(data);
