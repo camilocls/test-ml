@@ -25,22 +25,22 @@ const getItemsBySearch = async (req, res) => {
     }
   });
 
-  var maxCountCategory = categories.reduce(function (
+  const maxCountCategory = categories && categories.length ? categories.reduce(function (
     accumulator,
     currentCategory
   ) {
     return accumulator.count > currentCategory.count
       ? accumulator
       : currentCategory;
-  });
+  }) : null;
 
-  const categoryData = await fetch(
+  const categoryData = maxCountCategory ? await fetch(
     `${URL_API}categories/${maxCountCategory.id}`
-  ).then((res) => res.json());
+  ).then((res) => res.json()) : null;
 
-  const breadcrumb = categoryData.path_from_root
-    .map((item) => item.name)
-    .join(" / ");
+  const breadcrumb = categoryData ? categoryData.path_from_root
+  .map((item) => item.name)
+  .join(" / ") : "";
 
   const data = {
     author: AUTHOR,
