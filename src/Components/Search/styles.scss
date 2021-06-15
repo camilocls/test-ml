@@ -8,8 +8,8 @@
   }
 
   &__field {
-    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
-    border: 0 rgba(0, 0, 0, 0.2);
+    box-shadow: $shadowBox;
+    border: 0 rgba($black-color, 0.2);
     padding: 8px 16px;
     border-radius: 2px;
     background-color: #fff;
@@ -48,6 +48,7 @@
   &__icon {
     padding: 8px;
     display: block;
+    max-width: max-content;
     width: auto;
     height: 100%;
   }
