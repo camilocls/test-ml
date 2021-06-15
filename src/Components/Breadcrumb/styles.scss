@@ -1,0 +1,10 @@
+@import "../../styles//variables.scss";
+
+.breadcrumb {
+  margin: $space-1x 0;
+
+  &__path {
+    color: $gray-color;
+    font-size: 14px;
+  }
+}

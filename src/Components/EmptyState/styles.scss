@@ -1,0 +1,11 @@
+@import "../../styles//variables.scss";
+
+.empty-state {
+  &__message {
+    text-align: center;
+  }
+  
+  &__query {
+    text-decoration: underline;
+  }
+}
