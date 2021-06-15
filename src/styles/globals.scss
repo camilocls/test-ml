@@ -1,0 +1,12 @@
+// Support Bootstrap-grid SCSS 
+@import "~bootstrap/scss/bootstrap-grid";
+
+@import "./variables";
+
+body {
+  font-size: $body-size-text;
+  color: $black-color;
+  font-family: $font-lato;
+  margin: 0;
+  padding: 0;
+}
