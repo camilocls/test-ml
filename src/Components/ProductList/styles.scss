@@ -1,5 +1,12 @@
 @import "../../styles//variables.scss";
 
 .product-list {
-  
+  &__item {
+    &:not(:last-of-type)::after {
+      content: "";
+      display: block;
+      margin: 0 $space-1x;
+      border-bottom: 1px solid $light-color;
+    }
+  }
 }

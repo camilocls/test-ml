@@ -1,11 +1,19 @@
 @import "../../styles//variables.scss";
 
 .breadcrumb-layout {
+  margin-bottom: $space-2x;
+  
   &__content {
     border-radius: 2px;
-    padding: $space-1x;
     background-color: #fff;
     box-shadow: $shadowBox;
     border: 0 rgba($black-color, 0.2);
+
+    &::before, 
+    &::after {
+      content: "";
+      display: block;
+      height: 1px;
+    }
   }
 }
