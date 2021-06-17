@@ -1,27 +1,11 @@
 import { Link } from "react-router-dom";
 import "./styles.scss";
-import iconFreeShipping from "../../../assets/icon-shipping@2x.png";
-
-const FreeShippingTag = ({ isFree }) => {
-  return (
-    isFree && (
-      <span className="product-item__free-shipping">
-        <img
-          className="product-item__free-shipping__img"
-          src={iconFreeShipping}
-          alt="Free Shipping"
-        />
-      </span>
-    )
-  );
-};
+import { getPriceFormat } from "../../../utils/getPriceFormat";
+import FreeShippingTag from "../../FreeShipping";
 
 function ProductItem({ product }) {
   const { id, title, picture, free_shipping, price, location } = product;
-  const priceFormat = new Intl.NumberFormat({
-    style: "currency",
-    currency: price.currency,
-  }).format(price.amount);
+  const priceFormat = getPriceFormat(price.currency, price.amount);
 
   return (
     <div className="product-item" id={id}>
@@ -37,7 +21,9 @@ function ProductItem({ product }) {
           </div>
           <div className="product-item__location">{location}</div>
         </div>
-        <Link className="product-item__title" to={`/items/${id}`}>{title}</Link>
+        <Link className="product-item__title" to={`/items/${id}`}>
+          {title}
+        </Link>
       </div>
     </div>
   );
