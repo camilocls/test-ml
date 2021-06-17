@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import Error from "../../Components/Error";
 import Loader from "../../Components/Loader";
@@ -13,6 +13,7 @@ import "./styles.scss";
 
 function Product() {
   const { id: productId } = useParams();
+  const [messageSuccessCart, setMessageSuccessCart] = useState("")
   const {
     isError,
     isFetching,
@@ -34,6 +35,7 @@ function Product() {
 
   function handleBuy() {
     console.log("Buy now! 🤑");
+    setMessageSuccessCart("Added to the cart! 🤑")
   }
 
   if (isError) {
@@ -62,6 +64,7 @@ function Product() {
             />
           </div>
           <Button onClick={handleBuy} text="Comprar" />
+          <div className="product__success-cart">{messageSuccessCart}</div>
         </div>
         <div className="product__details">
           <h3 className="product__description__label">
