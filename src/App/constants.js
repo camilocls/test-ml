@@ -9,14 +9,13 @@ export const ROUTES = [
     component: Home,
   },
   {
-    path: "/items",
-    title: "Items",
-    component: Results,
-  },
-  {
     path: "/items/:id",
     title: "Product",
     component: Product,
   },
+  {
+    path: "/items",
+    title: "Items",
+    component: Results,
+  },
 ];
-
