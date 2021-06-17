@@ -2,6 +2,7 @@ const fetch = require("node-fetch");
 const { validateStatus } = require("../utils/validateStatus");
 const { getCategoryBreadcrumb } = require("../utils/getBreadcrumb");
 const { URL_API, AUTHOR } = require("../constants");
+const { IMAGE_PRODUCT_LARGE } = require("./constants");
 
 const getItem = async (req, res) => {
   const { id } = req.params;
@@ -30,7 +31,7 @@ const getItem = async (req, res) => {
   ).then((res) => res.json());
 
   const image = pictureMELI.variations.find(
-    (image) => image.size === "400x400"
+    (image) => image.size === IMAGE_PRODUCT_LARGE
   );
 
   const item = {
@@ -42,13 +43,14 @@ const getItem = async (req, res) => {
       price: {
         currency: itemMELI.currency_id,
         amount: itemMELI.price,
-        decimals: currencyMELI.decimals_places,
+        decimals: currencyMELI.decimal_places,
+        symbol: currencyMELI.symbol,
       },
       picture: image.url,
       condition: itemMELI.condition,
       free_shipping: itemMELI.shipping.free_shipping,
       sold_quantity: itemMELI.sold_quantity,
-      description: itemDescriptionMELI.plain_text,
+      description: itemDescriptionMELI.text || itemDescriptionMELI.plain_text,
     },
   };
 
