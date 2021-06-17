@@ -4,16 +4,31 @@
   display: flex;
   margin: $space-1x;
 
+  &__content {
+    flex: 1 0 auto;
+  }
+
+  &__details {
+    margin-top: $space-1x;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: $space-2x;
+  }
+
   &__title {
     font-size: 18px;
     margin: 0;
     padding: 0;
     line-height: 1.4;
+    color: $black-color;
+
+    &:not(:hover) {
+      text-decoration: none;
+    }
   }
 
   &__price {
     font-size: 24px;
-    margin-bottom: $space-2x;
 
     &__symbol {
       margin-right: 10px;
@@ -24,28 +39,23 @@
     width: 180px;
     height: 180px;
     margin-right: $space-1x;
+    border-radius: 4px;
     overflow: hidden;
     flex: 0 0 auto;
 
     &__src {
-      border-radius: 2px;
       object-fit: contain;
       width: 100%;
       height: 100%;
     }
   }
 
-  &__details {
-    flex: 4 0 0%;
-  }
-
   &__location {
     color: $gray-color;
     margin-left: auto;
     font-size: 12px;
-    flex: 0 0 200px;
-    display: flex;
-    justify-content: flex-end;
+    align-self: flex-end;
+    margin-right: $space-4x;
   }
 
   &__free-shipping {

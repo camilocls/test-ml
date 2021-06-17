@@ -1,11 +1,26 @@
+import { Link } from "react-router-dom";
 import "./styles.scss";
 import iconFreeShipping from "../../../assets/icon-shipping@2x.png";
+
+const FreeShippingTag = ({ isFree }) => {
+  return (
+    isFree && (
+      <span className="product-item__free-shipping">
+        <img
+          className="product-item__free-shipping__img"
+          src={iconFreeShipping}
+          alt="Free Shipping"
+        />
+      </span>
+    )
+  );
+};
 
 function ProductItem({ product }) {
   const { id, title, picture, free_shipping, price, location } = product;
   const priceFormat = new Intl.NumberFormat({
     style: "currency",
-    currency: price.currencyn,
+    currency: price.currency,
   }).format(price.amount);
 
   return (
@@ -13,19 +28,17 @@ function ProductItem({ product }) {
       <div className="product-item__image">
         <img className="product-item__image__src" src={picture} alt={title} />
       </div>
-      <div className="product-item__details">
-        <div className="product-item__price">
-          <span className="product-item__price__symbol">{price.symbol}</span>
-          <span className="product-item__price__amount">{priceFormat}</span>
-          {free_shipping && (
-            <span className="product-item__free-shipping">
-              <img className="product-item__free-shipping__img" src={iconFreeShipping} alt="Free Shipping" />
-            </span>
-          )}
+      <div className="product-item__content">
+        <div className="product-item__details">
+          <div className="product-item__price">
+            <span className="product-item__price__symbol">{price.symbol}</span>
+            <span className="product-item__price__amount">{priceFormat}</span>
+            <FreeShippingTag isFree={free_shipping} />
+          </div>
+          <div className="product-item__location">{location}</div>
         </div>
-        <h3 className="product-item__title">{title}</h3>
+        <Link className="product-item__title" to={`/item/${id}`}>{title}</Link>
       </div>
-      <div className="product-item__location">{location}</div>
     </div>
   );
 }
