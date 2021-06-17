@@ -37,7 +37,7 @@ function ProductItem({ product }) {
           </div>
           <div className="product-item__location">{location}</div>
         </div>
-        <Link className="product-item__title" to={`/item/${id}`}>{title}</Link>
+        <Link className="product-item__title" to={`/items/${id}`}>{title}</Link>
       </div>
     </div>
   );
