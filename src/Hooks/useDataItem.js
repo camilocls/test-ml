@@ -4,12 +4,14 @@ import { getItem } from "../services/getItem";
 export function useDataItem(productId) {
   const [product, setProduct] = useState({});
   const [isError, setIsError] = useState(false);
+  const [breadcrumb, setBreadcrumb] = useState("");
   const [isFetching, setIsFetching] = useState(false);
 
   useEffect(() => {
     setIsFetching(true);
     setIsError(false);
-    setProduct({})
+    setProduct({});
+    setBreadcrumb("");
 
     getItem(productId).then((data) => {
       if (data.error) {
@@ -18,9 +20,10 @@ export function useDataItem(productId) {
 
       if (data && data.item) {
         setProduct(data.item);
+        setBreadcrumb(data.breadcrumb);
       }
 
-      setIsFetching(false)
+      setIsFetching(false);
     });
   }, [productId]);
 
@@ -33,9 +36,13 @@ export function useDataItem(productId) {
   return {
     isFetching,
     id: productId,
+    breadcrumb,
     title: product.title,
     price: product.price || {},
     picture: product.picture,
-    description: product.description
+    description: product.description,
+    freeShipping: product.free_shipping,
+    condition: product.condition,
+    soldQuantity: product.sold_quantity
   };
 }
