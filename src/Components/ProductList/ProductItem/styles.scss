@@ -30,6 +30,8 @@
 
   &__price {
     font-size: 24px;
+    display: flex;
+    align-items: center;
 
     &__symbol {
       margin-right: 10px;
