@@ -8,7 +8,7 @@ function Header() {
   return (
     <div className="header">
       <Wrapper className="header__content">
-        <Container>
+        <Container fluid>
           <Row>
             <Col md={{ span: 1, offset: 1 }}>
               <a href="/">

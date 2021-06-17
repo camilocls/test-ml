@@ -7,7 +7,7 @@ function SingleLayout({ children }) {
     <div className="page-layout">
       <Header />
       <Wrapper>
-        <Container>
+        <Container fluid>
           <Row>
             <Col md={{ span: 10, offset: 1 }}>{children}</Col>
           </Row>
