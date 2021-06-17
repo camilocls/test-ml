@@ -32,7 +32,7 @@ const getItemsBySearch = async (req, res) => {
         })
       : null;
 
-  const breadcrumb = await getCategoryBreadcrumb(maxCountCategory.id);
+  const breadcrumb = await getCategoryBreadcrumb(maxCountCategory && maxCountCategory.id);
 
   const productsAsync = dataMELI.results.map(async (item) => {
     const currencyId = item.prices.prices[0].currency_id;
