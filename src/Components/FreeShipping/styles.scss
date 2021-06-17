@@ -1,0 +1,10 @@
+@import "../../styles//variables.scss";
+
+.free-shipping {
+  margin-left: $space-1x / 2;
+
+  &__img {
+    width: 18px;
+    height: 18px;
+  }
+}
