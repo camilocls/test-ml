@@ -5,8 +5,12 @@
     &:not(:last-of-type)::after {
       content: "";
       display: block;
-      margin: 0 $space-1x;
-      border-bottom: 1px solid $light-color;
+      margin: $space-2x $space-1x;
+      border-bottom: 1px solid $light-color; 
+      
+      @media($min-sm) {
+        margin: 0 $space-1x;
+      }
     }
   }
 }

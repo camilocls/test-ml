@@ -16,3 +16,10 @@ $font-lato: 'Lato', sans-serif;
 $transitionBackgroundColor: background-color ease 0.2s;
 
 $shadowBox: 0 1px 2px 0 rgba($black-color, 0.2);
+
+// Media Queries
+
+$min-sm: "min-width: 500px";
+$min-md: "min-width: 768px";
+$min-lg: "min-width: 998px";
+$min-xl: "min-width: 1199px";
