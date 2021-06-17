@@ -1,0 +1,19 @@
+@import "../../styles//variables.scss";
+
+.button {
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 10px;
+  border-radius: 4px;
+  outline: none;
+  cursor: pointer;
+  border: 0;
+  background-color: $blue-color;
+  color: #fff;
+  transition: $transitionBackgroundColor;
+
+  &:hover {
+    background-color: darken($blue-color, 10);
+  }
+}
