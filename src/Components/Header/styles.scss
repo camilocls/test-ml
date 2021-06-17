@@ -2,23 +2,31 @@
 
 .header {
   background-color: $main-color;
+  padding: 8px 0;
   
   &__content {
     display: flex;
-    justify-content: space-between;
     align-items: center;
   }
 
+  &__link-logo {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    margin-right: $space-1x;
+  }
+
   &__logo {
-    height: 34px;
-    margin: 10px;
-    margin-left: 0;
     display: block;
+    width: 100%;
+    max-width: 50px;
+    height: auto;
   }
 
   &__search {
     height: 100%;
     display: flex;
     align-items: center;
+    flex: 1;
   }
 }
