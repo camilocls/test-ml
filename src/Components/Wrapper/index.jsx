@@ -1,8 +1,9 @@
+import { setClassName } from "../../utils/setClassName";
 import styles from "./style.module.scss"
 
 function Wrapper({ children, className }) {
   return (
-    <div className={`${styles.container} ${className}`}>
+    <div className={setClassName([styles.container, className])}>
       { children }
     </div>
   );
