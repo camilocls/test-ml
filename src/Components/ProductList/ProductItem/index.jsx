@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import "./styles.scss";
 import { getPriceFormat } from "../../../utils/getPriceFormat";
-import FreeShippingTag from "../../FreeShipping";
+import FreeShippingTag from "../../FreeShippingTag";
 
 function ProductItem({ product }) {
   const { id, title, picture, free_shipping, price, location } = product;
