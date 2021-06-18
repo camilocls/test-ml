@@ -3,6 +3,7 @@ import { getItemsBySearch } from "../services/getItemsBySearch";
 
 export function useDataSearch(query) {
   const [results, setResults] = useState({});
+  const [breadcrumb, setBreadcrumb] = useState("");
   const [isError, setIsError] = useState(false);
   const [isFetching, setIsFetching] = useState(false);
 
@@ -18,6 +19,7 @@ export function useDataSearch(query) {
 
       if (data && data.items && data.items.length) {
         setResults(data.items);
+        setBreadcrumb(data.breadcrumb)
       }
 
       setIsFetching(false)
@@ -34,7 +36,7 @@ export function useDataSearch(query) {
 
   return {
     isFetching,
-    breadcrumb: results.breadcrumb,
+    breadcrumb,
     items: results
   };
 }

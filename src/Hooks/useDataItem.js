@@ -30,6 +30,7 @@ export function useDataItem(productId) {
   if (isError) {
     return {
       error: true,
+      isFetching: false,
     };
   }
 
@@ -43,6 +44,6 @@ export function useDataItem(productId) {
     description: product.description,
     freeShipping: product.free_shipping,
     condition: product.condition,
-    soldQuantity: product.sold_quantity
+    soldQuantity: product.sold_quantity,
   };
 }
