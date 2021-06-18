@@ -1,6 +1,6 @@
 import { renderHook } from "@testing-library/react-hooks";
 import { useDataSearch } from "./useDataSearch";
-import { MOCK_SEARCH_RESULT, MOCK_QUERY } from "../services/__tests__/constants"
+import { MOCK_SEARCH_RESULT, MOCK_QUERY } from "../services/mocks/constants"
 
 beforeEach(() => {
   global.fetch = jest.fn().mockImplementation(() =>

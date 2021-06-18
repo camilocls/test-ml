@@ -1,5 +1,5 @@
 import { getItem } from "./getItem";
-import { MOCK_RESULT_ITEM, MOCK_ID } from "./__tests__/constants";
+import { MOCK_RESULT_ITEM, MOCK_ID } from "./mocks/constants";
 import { API_URL } from "../constants";
 
 describe("validate getItem", () => {

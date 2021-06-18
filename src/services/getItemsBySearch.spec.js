@@ -1,5 +1,5 @@
 import { getItemsBySearch } from "./getItemsBySearch";
-import { MOCK_SEARCH_RESULT, MOCK_QUERY } from "./__tests__/constants";
+import { MOCK_SEARCH_RESULT, MOCK_QUERY } from "./mocks/constants";
 import { API_URL } from "../constants";
 
 describe("validate getItemsBySearch", () => {

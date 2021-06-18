@@ -1,6 +1,6 @@
 import { renderHook } from "@testing-library/react-hooks";
 import { useDataItem } from "./useDataItem";
-import { MOCK_RESULT_ITEM, MOCK_ID } from "../services/__tests__/constants"
+import { MOCK_RESULT_ITEM, MOCK_ID } from "../services/mocks/constants"
 
 beforeEach(() => {
   global.fetch = jest.fn().mockImplementation(() =>
