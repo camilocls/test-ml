@@ -1,3 +1,12 @@
 export const setClassName = (className) => {
-  return className.filter((className) => className).join(" ");
+  if (!className) {
+    return "";
+  }
+
+  const filterValidClassName = className.filter(
+    (className) =>
+      typeof className === "string" || typeof className === "number"
+  );
+
+  return filterValidClassName.filter((className) => className).join(" ");
 };
